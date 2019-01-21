@@ -11,6 +11,10 @@
 
   <body>
     <h1>Nav</h1>
+    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> 
+
     <%= yield %>
   </body>
 </html>

@@ -1,10 +1,15 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /articles
   # GET /articles.json
   def index
     @articles = Article.all
+  end
+
+  def index_by_user_id
+    @articles = Article.where(user_id: params[:user_id])
   end
 
   # GET /articles/1
@@ -27,6 +32,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
+    @article.user_id = current_user.id
       if @article.save
         redirect_to @article
       else
