@@ -16,7 +16,11 @@
       <h5>Blogus</h5>
     <% end %>  
     <nav class="my-2 my-md-0 mr-md-3">
-      <%= link_to 'My Blog', controller: '/articles', class: "p-2 text-dark"  %>
+      <% if current_user %>
+      <%= link_to 'My Blog', user_article_path(current_user), class: "p-2 text-dark"  %>
+      <% else %>
+      <%= link_to 'My Blog', root_path, class: "p-2 text-dark"  %>
+      <% end %>
       <%= link_to 'New Article', new_article_path, class: "p-2 text-dark"%>
       <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "p-2 text-dark"%> 
     </nav>

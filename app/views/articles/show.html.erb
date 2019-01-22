@@ -11,7 +11,7 @@
 	              <p class="card-text"><h5><%= @article.text %></h5></p>
 	          	  <div class = "group-btn">
 		              <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-light" %>
-	          		  <%= link_to 'Back', articles_path, class: "btn btn-light" %>
+	          		  <%= link_to 'Back', user_article_path(current_user), class: "btn btn-light" %>
 	          	  </div>  
 	            </div>
           	</div>

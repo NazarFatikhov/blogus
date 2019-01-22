@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'welcome/index'
-  get 'users/articles/:id' => 'articles#index_by_user_id', as: 'user_article'
+  get 'users/articles/:user_id' => 'articles#index_by_user_id', as: 'user_article'
 
   resources :articles do
   	resources :comments
