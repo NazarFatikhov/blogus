@@ -11,17 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
+  
+  <div class="form">
     <%= form.label :article %>
     <%= form.text_field :article %>
   </div>
 
   <div class="field">
     <%= form.label :text %>
-    <%= form.text_area :text %>
+    <%= form.text_area :text, class: "form-control", rows: "5" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class = "row">
+    <div class = "col"><div class="actions"> <%= form.submit %> </div></div>
+    <div class="col" ><div id = "show-in-new"><%= link_to 'Back', article, role: "button", class: "btn btn-light btn-s"%></div></div>
   </div>
 <% end %>

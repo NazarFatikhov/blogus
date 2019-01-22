@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ div.form{
+ 	margin-bottom: 10px;
+ }
+
+ #show-in-new{
+  position: absolute;
+  right: 0;
+  margin-right: 15px;
+ }

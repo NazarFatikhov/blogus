@@ -1,13 +1,18 @@
-<%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
-  <p>
-    <%= form.label :commenter %><br>
-    <%= form.text_field :commenter %>
-  </p>
-  <p>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
-  <p>
-    <%= form.submit %>
-  </p>
-<% end %>
+<div class="card my-4">
+  <%= form_with(model: [ @article, @article.comments.build ], local: true) do |form| %>
+    <h5 class="card-header">Add comment</h5>
+    <div class="card-body">
+      <div class="form">
+        <%= form.label :commenter %>
+        <%= form.text_field :commenter %>
+      </div>
+
+
+      <div class="field">
+        <%= form.label :body %>
+        <%= form.text_area :body, class: "form-control", rows: "5" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

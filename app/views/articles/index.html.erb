@@ -1,29 +1,23 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Articles</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Article</th>
-      <th>Text</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.article %></td>
-        <td><%= article.text %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Article', new_article_path %>
+    
+    <main role="main" class="container">
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h2 class="border-bottom border-gray pb-2 mb-0">Articles</h2>
+        <% @articles.each do |article| %>
+        <div class="media text-muted pt-3">
+          <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+          <div class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark"><h3><%= article.article %><h3></strong>
+              <div class = "btn-group">
+                <p><%= link_to 'Show', article, role: "button", class: "btn btn-light btn-s" %></p>
+                <p><%= link_to 'Edit', edit_article_path(article), role: "button", class: "btn btn-light btn-s" %></p>
+                <p><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, role: "button", class: "btn btn-light btn-s" %></p>
+              </div>   
+            </div>
+            <span class="d-block"><h6><%= article.text %><h6></span>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </main>

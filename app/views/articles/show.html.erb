@@ -1,23 +1,33 @@
-<p>
-  <strong>Title:</strong>
-  <%= @article.article %>
-</p>
- 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+<div class="container">
+    <div class="row">
 
-<p>
-  <strong>User:</strong>
-  <%= @article.user.email %>
-</p>
- 
-<h2>Comments</h2>
-<%= render @article.comments %>
- 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
- 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    	<!-- Blog Entries Column -->
+    	<div class="col-md-8">
+
+    		<!-- Blog Post -->
+    		<div class="card mb-4">
+	            <div class="card-body">
+	              <h2 class="card-title"><%= @article.article %></h2>
+	              <p class="card-text"><h5><%= @article.text %></h5></p>
+	          	  <div class = "group-btn">
+		              <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-light" %>
+	          		  <%= link_to 'Back', articles_path, class: "btn btn-light" %>
+	          	  </div>  
+	            </div>
+          	</div>
+          	<%= render 'comments/form' %>
+    	</div>	
+
+    	<!-- Sidebar Widgets Column -->
+        <div class="col-md-4">
+        	<h2 class="my-4">Comments</h2>
+	        <%= render @article.comments %>
+        </div>	
+
+
+	</div>
+	<!-- /.row -->
+    
+
+</div>    	
+ <!-- /.container -->

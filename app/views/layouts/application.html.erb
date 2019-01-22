@@ -5,16 +5,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css' %> 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <h1>Nav</h1>
-    <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <%= link_to root_path, class: "my-0 mr-md-auto font-weight-normal" do %>
+      <h5>Blogus</h5>
+    <% end %>  
+    <nav class="my-2 my-md-0 mr-md-3">
+      <%= link_to 'My Blog', controller: '/articles', class: "p-2 text-dark"  %>
+      <%= link_to 'New Article', new_article_path, class: "p-2 text-dark"%>
+      <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "p-2 text-dark"%> 
+    </nav>
+  </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
 
-    <%= yield %>
+    <div class = "container">
+      <%= yield %>
+    </div>
   </body>
 </html>
