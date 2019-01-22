@@ -23,3 +23,15 @@
   right: 0;
   margin-right: 15px;
  }
+
+ #artcile-zone{
+ 	position: relative;
+ 	top:0;
+ 	left:0;
+ }
+
+ #views-num{
+ 	position: absolute;
+ 	bottom: 0;
+ 	right: 0;
+ }

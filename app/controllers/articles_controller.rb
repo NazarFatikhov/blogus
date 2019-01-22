@@ -5,17 +5,19 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    @articles = Article.order(:id)
   end
 
   def index_by_user_id
-    @articles = Article.where(user_id: params[:user_id])
+    @articles = Article.where(user_id: params[:user_id]).order(id: :desc)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
+    @article.views_num  += 1
+    @article.save
   end
 
   # GET /articles/new
@@ -75,4 +77,6 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:article, :text)
     end
+
+
 end

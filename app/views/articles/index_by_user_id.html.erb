@@ -4,7 +4,7 @@
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h2 class="border-bottom border-gray pb-2 mb-0">Articles</h2>
         <% @articles.each do |article| %>
-        <div class="media text-muted pt-3">
+        <div class="media text-muted pt-3" id = "artcile-zone">
           <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
           <div class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
@@ -16,7 +16,8 @@
               </div>   
             </div>
             <span class="d-block"><h6><%= article.text %><h6></span>
-          </div>
+          </div>  
+          <div class = "inline" id = "views-num"><p>Views: <%= article.views_num%></p></div>   
         </div>
         <% end %>
       </div>
