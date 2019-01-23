@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="row" >
+        <div class="panel panel-default user_panel" id = "user-panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">User List</h3>
+            </div>
+            <% @users.each do |user| %>
+            <div class="panel-body" >
+				<div class="table-container">
+                    <table class="table-users table" border="0">
+                        <tbody>
+                            <tr>
+                                <td width="10">
+                                    <img class="pull-left img-circle nav-user-photo" width="50" src="https://pbs.twimg.com/media/C8QsNInXUAAyjZQ.jpg" />  
+                                </td>
+                                <td>
+                                     <%= user.email %><br><i class="fa fa-envelope"></i>
+                                </td>
+                                <td>
+                                    <%= link_to 'Show Articles', user, id: user.id %>
+                                </td>
+                                <td align="center">
+                                    Registrated at:  <%= user.created_at.to_date %><br><small class="text-muted">2 days ago</small>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <% end %>
+        </div>
+
+	</div>
+</div>
